@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Website Traffic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .title {
+            font-size: 24px;
+            color: #1a73e8;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+        .chart {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Website Traffic</div>
+        <div class="subtitle">Today</div>
+        <div class="chart">
+            <canvas id="trafficChart"></canvas>
+        </div>
+    </div>
+    <script>
+        const ctx = document.getElementById('trafficChart').getContext('2d');
+        const trafficChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Search Engine', 'Direct', 'Email', 'Union Ads', 'Video Ads'],
+                datasets: [{
+                    data: [10, 20, 30, 25, 15],
+                    backgroundColor: ['#d3d3d3', '#8bc34a', '#ffeb3b', '#f44336', '#03a9f4'],
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    display: false
+                }
+            }
+        });
+    </script>
+</body>
+</html>

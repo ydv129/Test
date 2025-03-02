@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .menu-item {
+            position: relative;
+            display: inline-block;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background-color: #555;
+        }
+
+        .dashboard {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .faq-section {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .faq-section h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '\25BC';
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            margin: 10px 0 0;
+            color: #555;
+        }
+
+        .faq-question.active + .faq-answer {
+            display: block;
+        }
+
+        .navigation-path {
+            padding: 10px 20px;
+            background-color: #e9ecef;
+            font-size: 14px;
+        }
+
+        .navigation-path a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .navigation-path a:hover {
+            text-decoration: underline;
+        }
+
+        .navigation-path span {
+            margin: 0 5px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-path">
+        <a href="#">Home</a> <span>/</span>
+        <a href="#">Pages</a> <span>/</span>
+        Frequently Asked Questions
+    </div>
+
+    <div class="dashboard">
+        <div class="faq-section">
+            <h2>Basic Questions</h2>
+            <div class="faq-item">
+                <p class="faq-question">1. What is Lorem Ipsum?</p>
+                <p class="faq-answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">2. Why do we use it?</p>
+                <p class="faq-answer">It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Advanced Topics</h2>
+            <div class="faq-item">
+                <p class="faq-question">1. Where does it come from?</p>
+                <p class="faq-answer">Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">2. Is Lorem Ipsum safe to use?</p>
+                <p class="faq-answer">Yes, Lorem Ipsum is safe as it is just placeholder text.</p>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Common Questions</h2>
+            <div class="faq-item">
+                <p class="faq-question">1. What is the purpose of Lorem Ipsum?</p>
+                <p class="faq-answer">Lorem Ipsum provides a filler text for designers and developers.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">2. Can I customize Lorem Ipsum?</p>
+                <p class="faq-answer">Yes, there are tools available online to customize Lorem Ipsum text.</p>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Technical Queries</h2>
+            <div class="faq-item">
+                <p class="faq-question">1. Does Lorem Ipsum have a specific format?</p>
+                <p class="faq-answer">Lorem Ipsum does not follow a specific format as it is randomly generated.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">2. How old is Lorem Ipsum?</p>
+                <p class="faq-answer">Lorem Ipsum has been used as dummy text since the 1500s.</p>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Usage Guidelines</h2>
+            <div class="faq-item">
+                <p class="faq-question">1. Can I use Lorem Ipsum in a live project?</p>
+                <p class="faq-answer">Lorem Ipsum is intended for placeholders and should not appear in live projects.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">2. What are the alternatives to Lorem Ipsum?</p>
+                <p class="faq-answer">There are several alternatives such as random text generators or actual content.</p>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Miscellaneous</h2>
+            <div class="faq-item">
+                <p class="faq-question">1. Why is Lorem Ipsum so popular?</p>
+                <p class="faq-answer">Lorem Ipsum is popular because it has been widely used and recognized for years.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">2. Can I translate Lorem Ipsum?</p>
+                <p class="faq-answer">Lorem Ipsum is not intended to be translated as it is nonsensical text.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                question.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
